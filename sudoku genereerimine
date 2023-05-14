@@ -64,7 +64,15 @@ def ainult_üks_lahendus (väli):
                 return False
     return True        
 
+algusaeg = datetime.datetime.now()
 genereeri(väli)
+
+lõppaeg = datetime.datetime.now()
+aeg = lõppaeg - algusaeg
+print("Sudoku lahendamise aeg:", aeg)
+
+with open("lahendamise_aeg.txt", "w") as file:
+    file.write(str(aeg))
 
 
 for read in väli: #prinditakse(praegu töö testimiseks)
